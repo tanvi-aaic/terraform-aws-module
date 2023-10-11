@@ -7,6 +7,6 @@ resource "aws_instance" "module-ec2" {
   instance_type = t3a.small
 
   tags = {
-    Name = custom-module
+    Name = custom
   }
 }
