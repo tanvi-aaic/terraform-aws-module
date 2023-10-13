@@ -5,5 +5,5 @@ variable "instance_type" {
     default = "t3a.small"
 }
 variable "name" {
-    default = custom-module 
+    default = "custom-module"
 }
