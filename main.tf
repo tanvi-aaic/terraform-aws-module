@@ -1,6 +1,7 @@
-module "module" {
-  source  = "app.terraform.io/AAIC-org/module/aws"
-  version = "1.0.0"
-  ami = "ami-053b0d53c279acc90" # replace this
-  instance_type = "t3a.small"
+resource "aws_instance" "terraform-cloud" {
+    ami = var.ami
+    instance_type = var.instance_type
+    tags = {
+      name = var.name
+    }
 }
