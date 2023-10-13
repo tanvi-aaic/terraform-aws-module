@@ -1,10 +1,11 @@
-//--------------------------------------------------------------------
-// Modules
-module "module" {
-  source  = "app.terraform.io/AAIC-org/module/aws"
-  version = "1.0.0"
+provider "aws" {
+  region = "us-east-1"
+}
 
-  ami = "ami-053b0d53c279acc90"
-  instance_type = "t3a.small"
-  name = "custom-module"
+resource "aws_instance" "terraform-cloud" {
+  ami           = var.ami
+  instance_type = var.instance_type
+  tags = {
+    Name = var.name
+  }
 }
